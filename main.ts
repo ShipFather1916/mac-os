@@ -7,6 +7,12 @@ namespace SpriteKind {
     export const TextSprite = SpriteKind.create()
     export const Window = SpriteKind.create()
 }
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (AboutThisMacDrag == 1) {
+        AboutThisMacDrag = 0
+        sprites.destroyAllSpritesOfKind(SpriteKind.Window)
+    }
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (AboutThisMacDrag == 1) {
         DragAbility()
@@ -235,6 +241,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.MenuBar, function (sprite, other
                 AppleLogoDrop.top = 30
             }
         } else {
+            pause(2000)
             sprites.destroyAllSpritesOfKind(SpriteKind.DropDownMenu)
             sprites.destroyAllSpritesOfKind(SpriteKind.Hitbox)
             sprites.destroyAllSpritesOfKind(SpriteKind.TextSprite)
