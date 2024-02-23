@@ -7,6 +7,11 @@ namespace SpriteKind {
     export const TextSprite = SpriteKind.create()
     export const Window = SpriteKind.create()
 }
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (Mouse.mouseSprite().overlapsWith(AboutThisMac)) {
+    	
+    }
+})
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Mouse.mouseSprite().overlapsWith(AboutThisMac)) {
         if (AboutThisMacDrag == 1) {
@@ -4783,6 +4788,9 @@ function OverlapFix () {
     2
     )
 }
+function Clock () {
+	
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Window, function (sprite, otherSprite) {
 	
 })
@@ -6834,3 +6842,6 @@ AppStore = sprites.create(img`
     ccccccccffccccccccccccccccccccccccccfccfccffffccccfccccfcccccccccffccccfccccfcfffffffffffffffffcffffffffffffffffcfffffffffffffffffccfccfcfffcffffccffcffccfccccccccccffccccccccccccccccffccccfffffffccccffffccffcccccccccffcfffccccccfccccccffffffffffffccffccccccccccfcccccccfccccccccccccccccccccccccfcccfccccccccccccccccccccccccccccccccccccccccccccccccfffffcccccccccccccccccccccffcfccfcccfccccffcfcccccccccccccccccccccccfcfffffcccfffccccccccfffffccfcccfcfffffcfcfccccffffffffcfffffcfffffcccfccfcffcfccccfcfcffcffffffccffffffffffccccffcfffffffffcffcffffffffcfffffffffffffcfffcffffffffcfcfcfffffffcfcccccccccccccccfccccccccccccccccccccfcccccccccccccccccccccffcccffcffffcffcccfccccccccccccccccccccccccccccc
     `, SpriteKind.Window)
 sprites.destroyAllSpritesOfKind(SpriteKind.Window)
+game.onUpdateInterval(3600000, function () {
+	
+})
