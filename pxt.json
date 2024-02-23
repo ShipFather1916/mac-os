@@ -11,7 +11,8 @@
         "Custom Keybind Extension": "github:Brohann3214/custom-keybind-extension#ce1cb5acda5cd438592e38da4aaab10b73b46c64",
         "arcade-story": "github:microsoft/arcade-storytelling#v1.0.3",
         "darts": "*",
-        "animation": "*"
+        "animation": "*",
+        "Color Fading": "github:jwunderl/pxt-color#v0.2.3"
     },
     "files": [
         "main.blocks",
