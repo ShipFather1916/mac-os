@@ -45,282 +45,651 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 function AppDock () {
-    Apps = [
-    sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Application),
-    sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Application),
-    sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Application),
-    sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Application),
-    sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Application),
-    sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Application),
-    sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Application),
-    sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Application),
-    sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Application),
-    sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Application),
-    sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Application),
-    sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Application),
-    sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Application),
-    sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Application),
-    sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+    FinderIcon = sprites.create(img`
+        8888888888888888888889111111111111111111
+        8888888888888888888881111111111111111111
+        8888888888888888888891111111111111111111
+        8888888888888888888891111111111111111111
+        8888888888888888888811111111111111111111
+        8888888888888888888911111111111111111111
+        8888888888888888888911111111111111111111
+        8888888888888888888111111111111111111111
+        88888888888888888881111dd111111111111111
+        88888888888888888891dddddddddd1111111111
+        888888888f888888889dddddddddddbfd1111111
+        88888888cc88888888ddddddddddddccd1111111
+        88888888cc888888881dddddddddddccdd111111
+        88888888cc88888888ddddddddddddccdddd1111
+        888888888c88888889ddddddddddddccdddddd11
+        888888888888888889dddddddddddddddddddd11
+        88888888888888888dddddddddddddddddddddd1
+        88888888888888888ddddddddddddddddddddddd
+        888888888888888881dddddddddddddddddddddd
+        88888888888888888ddddddddddddddddddddddd
+        88888888888888888ddddddddddddddddddddddd
+        88888888888888888ddddddddddddddddddddddd
+        88888888888888888ddddddddddddddddddddddd
+        88888888888888888ddddddddddddddddddddddd
+        888888888888888888888888dddddddddddddddd
+        888888888888888888888888dddddddddddddddd
+        888888888888888888888888dddddddddddddddd
+        888888888888888888888888dddddddddbdddddd
+        888888cf8888888888888888dddddddddfcddddd
+        8888888cf888888888888888dddddddbfcdddddd
+        88888888cf88888888888888ddddddbfcddddddd
+        888888888ccf888888888888ddddbfcbdddddddd
+        88888888888ccf8888888888dbcfccdddddddddd
+        8888888888888cccffffffffcccbdddddddddddd
+        888888888888888888bbbbb8bddddddddddddddd
+        888888888888888888888888dddddddddddddddd
+        8888888888888888888888889ddddddddddddddd
+        8888888888888888888888888ddddddddddddddd
+        8888888888888888888888888ddddddddddddddd
+        8888888888888888888888888ddddddddddddddd
         `, SpriteKind.Application)
-    ]
-    FinderIcon = Apps[0]
-    for (let index = 0; index < 4; index++) {
-    	
-    }
+    FinderIcon.setPosition(86, 722)
+    SafariIcon = sprites.create(img`
+        1111111111111111d96666691111111111111111
+        111111111111166666666666666d111111111111
+        1111111111166669699699696666691111111111
+        1111111116669699699699699696666d11111111
+        1111111166699696696696666969696691111111
+        111111d669696696666666666966969666111111
+        11111d6696969666666666666666966966611111
+        1111d66969666666666666666666669696661111
+        1111669666966666666666666666669666b6d111
+        11166969666666666666666666666666bc666111
+        11d666969666666666666666666666b4e6966611
+        11669966666666666666666666666b2e66996611
+        1d6996966666666666666666666b42e669669661
+        16666666666666666666666666b42e6666666661
+        166999666666666666666666b442e6666669966d
+        d69966666666666666666664442e666666669966
+        966666666666666666666b4442e6666666666666
+        9669966666666666666644422e66666666699966
+        6696666666666666669444222c66666666666996
+        666666666666666669134222c666666666666666
+        66999666666666669111b22c6666666666699996
+        6699666666666669111ddec66666666666666996
+        66666666666666611ddddc666666666666666666
+        9699666666666611dddb86666666666666666966
+        d66966666666611dddc666666666666666669666
+        d6666966666611ddb86666666666666666996669
+        1669666666611dbc86666666666666666666996d
+        d9669666661ddc8866666666666666666669966d
+        dd66699661db8866666666666666666666d6669d
+        dd969666ddc886666666666666666666666666dd
+        ddd6696db8866666666666666666666696966ddd
+        dddd669688666666666666666666666669666ddd
+        dddd96866666666666666666666666969666dddd
+        ddddd666666696666666666666666669666ddddd
+        dddddd6666966666666666666966969666dddddd
+        ddddddd96669669669669666696966666ddddddd
+        dddddddd966696966966966696996669dddddddd
+        dddddddddd96666966969969666666dddddddddd
+        dddddddddddd96666696666666669ddddddddddd
+        ddddddddddddddd96666666699dddddddddddddd
+        `, SpriteKind.Application)
+    SafariIcon.setPosition(147, 722)
+    PhotosIcon = sprites.create(img`
+        11111111111111111d4444d11111111111111111
+        111111111111111d444444441111111111111111
+        1111111111111114444444444111111111111111
+        1111111111111144444444444111111111111111
+        1111111d4443114444444444441d555511111111
+        111111444444444444444444445555555d111111
+        1111144444444444444444444455555555d11111
+        1111344444444424444444444455555555511111
+        11114444444444244444544455555555555d1111
+        111d444444444444445554555555555555551111
+        111d444444444444444545555555555555551111
+        11114444444444444444555555555555555d1111
+        1111444444444444444e555555555555555d1111
+        1111d44444444444442e45554455555555511111
+        111dbe222222222444e44554e77777777777d111
+        1dbbbbe22222222244e445ee7777777777777711
+        1bbbbbbe22222222244e4ee777777777777777d1
+        3bbbbbbbe2222222224e5e777777777777777771
+        bbbbbbbbbe2222222e4e4777777777777777777d
+        bbbbbbbbbbe22ee222ebb7ffeefe777777777777
+        bbbbbbbbbbbeeeeeeebdd66cccc6777777777777
+        bbbbbbbbbbbeeeeeeecb6c666667777777777777
+        bbbbbbbbbbbbbbbbecbb6cc6666777777777777d
+        dbbbbbbbbbbbbbbcccbc86ccc667777777777771
+        13bbbbbbbbbbbbeccbbcc66cc6677777777777d1
+        113bbbbbbbbbbbcccbbcc666cc67777777777d11
+        11ddbbcccccccccbbbbcc666666666666777dd11
+        111dbbbbbbbbbbbbbbbc666666666666666dd111
+        1111bbbbbbbbbbbbbbbc666666666666677b1111
+        111dbbbbbbbbbbbbbbbb66666666666677771111
+        111dbbbbbbbbbbbbbb6bb6666666666677771111
+        1111bbbbbbbbbbbbb66b996666666667777b1111
+        1111bbbbbbbbbbcc6669999666666677777d1111
+        1111dbbbbbbbbb66669999996666677777711111
+        11111dbbbbbbbb66699999999666777777111111
+        111111dbbbbbbb6699999999966677777d111111
+        1111111ddbbbdb69999999999bdbbbbd11111111
+        11111111ddddddb9999999999d1dddd111111111
+        11111111111111d999999999d111111111111111
+        111111111111111d9999996d1111111111111111
+        `, SpriteKind.Application)
+    PhotosIcon.setPosition(209, 722)
+    MessagesIcon = sprites.create(img`
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        777777777777777dd11111dd9777777777777777
+        777777777777d111111111111117777777777777
+        7777777777d11111111111111111177777777777
+        77777777d111111111111111111111d777777777
+        7777777d11111111111111111111111d77777777
+        777777d1111111111111111111111111d7777777
+        77777d111111111111111111111111111d777777
+        77777111111111111111111111111111ddd77777
+        7777111111111111111111111111111dddd77777
+        777b1111111111111111111111111ddddddd7777
+        7771111111111111111111111ddddddddddd7777
+        77711111111111dddddddddddddddddddddd7777
+        777111111111dddddddddddddddddddddddd7777
+        7771111111ddddddddddddddddddddddddddb777
+        777111111dddddddddddddddddddddddddddb777
+        77711111dddddddddddddddddddddddddddd7777
+        7771111ddddddddddddddddddddddddddddd7777
+        777d11dddddddddddddddddddddddddddddd7777
+        7777dddddddddddddddddddddddddddddddb7777
+        7777ddddddddddddddddddddddddddddddb77777
+        77777ddddddddddddddddddddddddbbbbbb77777
+        77776ddddddddddddddddddddddbbbbbbb777777
+        777777dddddddddddddddddbbbbbbbbbb7777777
+        7777777dddddddddbbbbbbbbbbbbbbbb76777777
+        777777677ddddddbbbbbbbbbbbbbbbb767777777
+        7777777667ddddddbbbbbbbbbbbbb76677777777
+        77777777767ddbbbbbbbbbbbbbb7766777777777
+        77777777777dbbb7bbbbbbb77766677777777777
+        7777777777ddb766666776666667777777777777
+        777777777dd77666666666667777777777777777
+        7777777777666777777777777777777777777777
+        7777777776667777777777777777777777777777
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        `, SpriteKind.Application)
+    MessagesIcon.setPosition(269, 722)
+    AppStoreIcon = sprites.create(img`
+        6666666666666666666666666666666666666666
+        6666666666666666666666666666666666666666
+        6666666666666666666666666666666666666666
+        6666666666666666666666666666666666666666
+        6666666666666666666666666666666666666666
+        6666666666666666996669966666666666666666
+        6666666666666661119691196666666666666666
+        66666666666666611119111d6666666666666666
+        6666666666666669111111196666666666666666
+        6666666666666669111111d66666666666666666
+        6666666666666666911111966666666666666666
+        6666666666666666611119666666666666666666
+        6666666666666666611119666666666666666666
+        6666666666666666911196966666666666666666
+        6666666666666666111169166666666666666666
+        6666666666666661111961196666666666666666
+        666666666666669111d661116666666666666666
+        6666666666666611119661119666666666666666
+        66666666666669111d666d111966666666666666
+        6666666666666111166669111166666666666666
+        6666666666669111966666d11196666666666666
+        666666666666111d666666911116666666666666
+        6666666666611119666666691119666666666666
+        6666699999911119999996661111999999666666
+        6669111111111111111111169111111111166666
+        6669111111111111111111116d11111111196666
+        6669dddddddddddddddddddd691111ddddd66666
+        66666666666666666666666666d1119666666666
+        6666888666688888888888886661111688666666
+        6666666111166666666666666669111966666666
+        6666669111966666666666666686111166666666
+        6666661111686666666666666668911196666666
+        666666d1198666666666666666686d1196666666
+        6666889d96866666666666666668869968866668
+        8888888688866666666666666668886688888888
+        8888888888886666666666666688888888888888
+        8888888888886666666666666688888888888888
+        8888888888888866666666666888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        `, SpriteKind.Application)
+    AppStoreIcon.setPosition(330, 722)
+    MusicIcon = sprites.create(img`
+        2222222222222222222222222222222222222222
+        2222222222222222222222222222222222222222
+        2222222222222222222222222222222222222222
+        2222222222222222222222222222222222222222
+        22222222222222222222222222eebbb222222222
+        222222222222222222222ebbbdd111d222222222
+        2222222222222222eebbdd11111111d222222222
+        22222222222222bdd1111111111111d222222222
+        2222222222222d1111111111111111d222222222
+        2222222222222d1111111111111111d222222222
+        2222222222222d1111111111111111d222222222
+        2222222222222d1111111111111d31d222222222
+        2222222222222d11111111d3444441d222222222
+        2222222222222d111d344444444441d222222222
+        2222222222222d1444444444444441d222222222
+        2222222222222d1444444444444441d222222222
+        2222222222222d1422222222222241d222222222
+        2222222222222d1422222222222241d222222222
+        2222222222222d1422222222222221d222222222
+        2222222222222d1222222222222221d222222222
+        2222222222222d1222222222222221d222222222
+        2222222222222d1222222222222221d222222222
+        2222222222222d1222222222222221d222222222
+        2222222222222d1222222222222241d222222222
+        2222222222222d122222222222eeb1d222222222
+        2222222222222d122222222ebdd111d222222222
+        2222222222222d12222222bd111111d222222222
+        22222222222eb112222222d1111111d222222222
+        22222222ebdd1112222224111111113222222222
+        2222222d11111112222222111111114222222222
+        222222b111111112222222d11111132222222222
+        222222d1111111d22222222d1111322222222222
+        2222221111111132222222222222222222222222
+        2222223111111122222222222222222222222222
+        2222222d1111d222222222222222222222222222
+        2222222244422222222222222222222222222222
+        2222222222222222222222222222222222222222
+        2222222222222222222222222222222222222222
+        2222222222222222222222222222222222222222
+        2222222222222222222222222222222222222222
+        `, SpriteKind.Application)
+    MusicIcon.setPosition(391, 722)
+    MailIcon = sprites.create(img`
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888911111111111111111111111111111198888
+        8888dd1111111111111111111111111111dd8888
+        88881dd11111111111111111111111111dd18888
+        888811dd111111111111111111111111dd118888
+        8888111dd1111111111111111111111dd1118888
+        8888111ddd11111111111111111111ddd1118888
+        88881111ddd111111111111111111ddd11118888
+        888811111ddd1111111111111111ddd111118888
+        8888111111dbd11111111111111dbd1111118888
+        88881111111dbd111111111111dbd11111118888
+        88881111111ddbd1111111111dbdd11111118888
+        8888ddddddddbbbd11111111dbbbdddddddd8888
+        8888dddddddbd1dbd111111dbd1dbddddddd8888
+        8888ddddddbd111dbddd1ddbd111dbdddddd8888
+        8888dddddbd11111dbbbbbbd11111dbddddd8888
+        8888ddddbd111111dddddddd111111dbdddd8888
+        8888dddbddddddddddddddddddddddddbddd8888
+        8888ddbddddddddddddddddddddddddddbdd8888
+        8888dbddddddddddddddddddddddddddddbd8888
+        8888bddddddddddddddddddddddddddddddb8888
+        888888bbbbbbbbbbbbbbbbbbbbbbbbbbbb888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        `, SpriteKind.Application)
+    MailIcon.setPosition(451, 722)
+    NotesIcon = sprites.create(img`
+        5555555555555555555555555555555555555555
+        5555555555555555555555555555555555555555
+        5555555555555555555555555555555555555555
+        5555555555555555555555555555555555555555
+        5555555555555555555555555555555555555555
+        5555555555555555555555555555555555555555
+        5555555555555555555555555555555555555555
+        5555555555555555555555555555555555555555
+        5555555555555555555555555555555555555555
+        bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+        dddddddddddddddddddddddddddddddddddddddd
+        d1d1d111111d1d1d1d1d1d1d1d1d1d1d1d1111d1
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        dddddddddddddddddddddddddddddddddddddddd
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        1111111111111111111111111111111111111111
+        dddddddddddddddddddddddddddddddddddddddd
+        dddddddddddddddddddddddddddddddddddddddd
+        dddddddddddddddddddddddddddddddddddddddd
+        dddddddddddddddddddddddddddddddddddddddd
+        dddddddddddddddddddddddddddddddddddddddd
+        dddddddddddddddddddddddddddddddddddddddd
+        dddddddddddddddddddddddddddddddddddddddd
+        dddddddddddddddddddddddddddddddddddddddd
+        dddddddddddddddddddddddddddddddddddddddd
+        `, SpriteKind.Application)
+    NotesIcon.setPosition(511, 722)
+    RobloxIcon = sprites.create(img`
+        ccb11111111111111111111111111dbccccccccc
+        ccd111111111111111111111111111111dcccccc
+        cc1111111111111111111111111111111111dbcc
+        cc11111111111111111111111111111111111111
+        cb1111111111111111111111111111111111111d
+        cd111111111111111111111111111111111ddddd
+        c111111111111111111111111111dddddddddddd
+        c11111111111111111111111dddddddddddddddd
+        b111111111111111111ddddddddddddddddddddd
+        111111111111111ddddddddddddddddddddddddd
+        111111111ddddddddddddddddddddddddddddddd
+        11111ddddddddddddddddddddddddddddddddddd
+        1ddddddddddddddddddddddddddddddddddddddd
+        ddddddddddddddddbddddddddddddddddddddddd
+        dddddddddddddddbccccbddddddddddddddddddd
+        dddddddddddddddcccccccccdddddddddddddddd
+        dddddddddddddddccccccccccccbdddddddddddd
+        ddddddddddddddbcccccccccccccdddddddddddd
+        ddddddddddddddcccccccccccccbdddddddddddd
+        ddddddddddddddcccccccccccccddddddddddddd
+        ddddddddddddddcccccccccccccddddddddddddd
+        dddddddddddddbccccccccccccbddddddddddddd
+        dddddddddddddcccccccccccccdddddddddddddd
+        dddddddddddddcccccccccccccdddddddddbbbbb
+        ddddddddddddbcccccccccccccdddddbbbbbbbbb
+        ddddddddddddbccccccccccccbdbbbbbbbbbbbbb
+        ddddddddddddddddbccccccccddbbbbbbbbbbbbb
+        ddddddddddddddddddddbccccdbbbbbbbbbbbbbb
+        ddddddddddddbbbbbbbddddbbdbbbbbbbbbbbbbb
+        ddddddbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbb
+        dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+        bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+        bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+        bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+        bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+        bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbc
+        bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbc
+        bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbc
+        bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbc
+        fccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbcc
+        `, SpriteKind.Application)
+    RobloxIcon.setPosition(635, 722)
+    MinecraftIcon = sprites.create(img`
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        77777ccccccccc6777777777ccccccccc7777777
+        77777ffffffffff777777777fffffffff7777777
+        77777ffffffffff77777777cfffffffff7777777
+        77777ffffffffff77777777cfffffffff7777777
+        77777ffffffffff77777777cfffffffff7777777
+        77777ffffffffff77777777cfffffffff7777777
+        77777ffffffffff77777777cfffffffff7777777
+        77777ffffffffff77777777cfffffffff7777777
+        77777ffffffffff77777777cfffffffff7777777
+        77777cccccccccc66666666cccccccccc7777777
+        77777777777777cfffffffff7777777777777777
+        77777777777777cfffffffff7777777777777777
+        77777777777777cfffffffff7777777777777777
+        77777777777777cfffffffff7777777777777777
+        7777777777ccccffffffffffcccc777777777777
+        7777777777ffffffffffffffffffc77777777777
+        7777777777ffffffffffffffffffc77777777777
+        7777777777ffffffffffffffffffc77777777777
+        7777777777ffffffffffffffffffc77777777777
+        7777777777ffffffffffffffffffc77777777777
+        7777777777ffffffffffffffffffc77777777777
+        7777777777ffffffffffffffffffc77777777777
+        7777777777ffffffffffffffffffc77777777777
+        7777777777fffffcccccccccffffc77777777777
+        7777777777fffff777777777ffffc77777777777
+        7777777777fffff77777777cffffc77777777777
+        7777777777fffff77777777cffffc77777777777
+        7777777777fffff77777777cffffc77777777777
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        7777777777777777777777777777777777777777
+        `, SpriteKind.Application)
+    MinecraftIcon.setPosition(696, 722)
+    DiscordIcon = sprites.create(img`
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        88888888888d1118888888881111888888888888
+        8888888881111111111111111111111888888888
+        8888888811111111111111111111111188888888
+        88888881111111111111111111111111da888888
+        88888ad11111111111111111111111111b888888
+        88888b1111111111111111111111111111888888
+        88888d1111111111111111111111111111b88888
+        8888811111111111111111111111111111d88888
+        8888b11111111111111111111111111111188888
+        88881111111111111111111111111111111b8888
+        888811111111dccb1111111dbcb11111111d8888
+        888b1111111dccccb111111ccccc111111118888
+        888d1111111b8888c11111bc888cd11111118888
+        888d1111111c8aa88d1111b8aaa8b1111111b888
+        88811111111baaaac11111baaaaad1111111b888
+        88811111111daaaab111111aaaaa11111111d888
+        888111111111dbab11111111bab111111111d888
+        888111111111111111111111111111111111d888
+        888111111111111111111111111111111111d888
+        888111111111111111111111111111111111d888
+        888d1111111cd1111111111111dbb1111111b888
+        8888b1111111bccbdd1111dbbccd111111db8888
+        88888cd111111c88ccccccc888b111111bc88888
+        888888cbd111b88888888888888d111bc8888888
+        88888888ccbd888888888888888bdbc888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        8888888888888888888888888888888888888888
+        `, SpriteKind.Application)
+    DiscordIcon.setPosition(756, 722)
+    BlenderIcon = sprites.create(img`
+        ccccccccccccc444444444cccccccccccccccccc
+        cccccccccccccce44444444ccccccccccccccccc
+        ccccccccccccccce44444444eccccccccccccccc
+        ccccccccccccccccc44444444ecccccccccccccc
+        cccccccccccccccccc444444444ccccccccccccc
+        ccccccccccccccccccce44444444eccccccccccc
+        44444444444444444444444444444ecccccccccc
+        4444444444444444444444444444444ccccccccc
+        44444444444444444444444444444444eccccccc
+        444444444444444444444444444444444ecccccc
+        4444444444444444444444444444444444eccccc
+        eeeeeeee444444444444dddd444444444444cccc
+        ccccccc4444444444d111111111444444444eccc
+        ccccce444444444d111111111111144444444ecc
+        cccce444444444d11111111111111144444444ec
+        ccc4444444444d11111b66666b1111144444444c
+        cc4444444444d1111d666666666d11114444444e
+        e444444444441111d66666666666d111d4444444
+        4444444444441111666666666666611114444444
+        44444444444d111d6666666666666d1114444444
+        444444444441111b6666666666666b111d444444
+        444444444441111b6666666666666b111d444444
+        444444444441111b6666666666666b111d444444
+        444e44444441111d666666666666611114444444
+        44cc4444444d1111666666666666b11114444444
+        eccc4444444411111666666666661111d4444444
+        cccc44444444d11111b6666666b1111144444444
+        cccce444444441111111bb6bb111111d44444444
+        ccccc4444444441111111111111111d444444444
+        ccccc4444444444d1111111111111d444444444e
+        ccccce444444444441111111111d44444444444c
+        cccccc4444444444444dd111d4444444444444cc
+        ccccccc444444444444444444444444444444ecc
+        ccccccce4444444444444444444444444444eccc
+        cccccccce44444444444444444444444444ecccc
+        ccccccccce444444444444444444444444eccccc
+        ccccccccccc4444444444444444444444ecccccc
+        cccccccccccce444444444444444444ecccccccc
+        cccccccccccccce44444444444444ecccccccccc
+        ccccccccccccccccceee44444eeccccccccccccc
+        `, SpriteKind.Application)
+    BlenderIcon.setPosition(824, 724)
+    GarageBandIcon = sprites.create(img`
+        ffffffffffffffffffffffffffffffbbcfffffff
+        fffffffffffffffffffffffffffffbbbffffffff
+        fffffffffffffffffffffffffffffbbcffffffff
+        ffffffffffffffffffffffffffffbbbfffffffff
+        ffffffffffffffffffffffffffffbbefffffffff
+        fffffffffffffffffffffffffffbbbffffffffff
+        fffffffffffffffffffffffffffbbbffffffffff
+        ffffffffffffffffffffffffffbbbcffffffffff
+        ffffffffffffffffffffffffffbbbfffffffffff
+        fffffffffffffffffffffffffbbbefffffffffff
+        fffffffffffffffffffffffffbbbcfffffffffff
+        ffffffffffffffffffffffffbbbbfffcffffffff
+        ffffffffffffffffffffffffbbbcffcfffffffff
+        fffffffffffffffffffffffbbbcfffeeebffffff
+        fffffffffffffffffcfcefbbbdefceeecbfcffff
+        ffffffffffffffffccceeedbbbffceeebccfffff
+        ffffffffffffffffcce24eeeecffceebcccfffff
+        fffffffffffffffffce444444fffcedcccffffff
+        fffffffffffffffffce44444efffcccccfffffff
+        ffffffffffffffffce44bbbbcfffcbccffffffff
+        fffffffffffffffce44bbbdbcfffccffffffffff
+        ffffffffffffffcee44bbbbcffffcfcfffffffff
+        ffffffffffffccee447eeebcffffcfccffffffff
+        ffffffffffffcee444eeeeeffffcffcbffffffff
+        fffffffffffcee445dbbb77eecccfeebffffffff
+        ffffffffffce4e45777d4d7ddeffeeeccfffffff
+        fffffffffce4e4554eeeeeddd4f44eeebfffffff
+        ffffffffce4e455555555557c4f4bceebfffffff
+        ffffffffcee455555555555d44f4cceebfffffff
+        fffffffce44455555555555dbdc44ebebfffffff
+        fffffffce4455555555555dec4ce4bebcfffffff
+        ffffffce44455555555555dce4ee4bebcfffffff
+        ffffffce44445555555ec7444443eeedffffffff
+        ffffffce4444455555effd44444bccbcfcffffff
+        ffffffce4444444555efed44444cccbfffffffff
+        ffffffce44444444444e44bc44beebffffffffff
+        ffffffcee4444444444444fbebbebccfffffffff
+        ffffffcee4444444444444ccebbbbfefffffffff
+        ffffffcceee44444444444eeeebbffffffffffff
+        cffffffcceeee4444444eeeeebbfffffffffffff
+        `, SpriteKind.Application)
+    GarageBandIcon.setPosition(878, 722)
+    FinalCutProIcon = sprites.create(img`
+        cfcccddddddddccccccccddddddddbccccccbddd
+        fcccccddddddddbcccccccddddddddbccccccbdd
+        cccccccddddddddbcccccccddddddddbcccccccb
+        dcccccccddddddddbcccccccddddddbbfffffffc
+        ddcccccccddddddddbcccffffcccccccfccccccc
+        dddcccccccbdbbbcccffffffcccccccccccccccc
+        dddbfffffffccccccccccccccccccccccccccccc
+        ccccffffffcccccccccccccccccccccccccccccc
+        dddbccccccddddddddccccccbdddddddccbbbbbd
+        ddbccccccbdddddddccccccbdddddddccccbbbdd
+        ddccccccbdddddddccccccbdddddddccccbbbddd
+        dccccccbdddddddcccccccdddddddbccccbbdddd
+        cccccccdddddddcccccccdddddddbcccccbddddd
+        ccccccdddddddcccccccdddddddbcccccbdddddd
+        cccccdddddddbccccccdddddddbccccccddddddd
+        cccccbbbbbbbccccccbbbbbbbbccccccbbbbbbbb
+        ccccccccccccccccccccccccccccccccccbbbbbb
+        ccccccccccccccccccccccccccccccccccbbbbbb
+        eeeeeeeeeeeeeeee44eeeeeeeeeeeeeeeeeeeeee
+        5555555555555555555444444444444444444444
+        5555555555555555555444444444444444444444
+        5555555555555555555544444444444444444444
+        5555555555555555555544444444444444444444
+        5555555555555555555544444444444444444444
+        5555555555555555555544444444444444444444
+        5555555555555555555444444444444444444444
+        5555555555555555555444444444444444444444
+        5555555555555555555444444444444433333333
+        5555555555555555557dd3444333333333333333
+        5555555555555557777dbbb33333333333333333
+        7555555577777777777bbb333333333333333333
+        77777777777777777799dbb33333333333333333
+        77777777777777777799999b3333333333333333
+        7777777777777777799999999b33333333333333
+        7777777777777777799999999993333333333333
+        7777777777777777999999999999933333333333
+        7777777777777779999999999999993333333333
+        777777777777779999999999999999993333333b
+        c77777777777779999999999999999999333333c
+        c677777777777999999999999999999999b333ac
+        `, SpriteKind.Application)
+    FinalCutProIcon.setPosition(939, 722)
+    SystemSettingIcon = sprites.create(img`
+        ddddddddddddddbccffffffcbddddddddddddddd
+        dddddddddddbcffffffffffffffcdddddddddddd
+        ddddddddddcfffffcfcfcffffffffcdddddddddd
+        ddddddddcfffffccccccbccccffffffbdddddddd
+        dddddddfffffcccbbddddddbdcbccfffcddddddd
+        ddddddfffccbcdddddbbbbddddbcbccffcdddddd
+        dddddfffcbcddddbffffffffcdddcccfffcddddd
+        ddddfffcccddddbfffffffffffcbddcbcffcdddd
+        dddcfcccbdddddcffcccccffffffbddcccffbddd
+        ddbffccbddccbdbccccbbbccccfffcddbccffddd
+        ddffcbcddffffbdbbbbbbbbbcccfffcdbcbcfcdd
+        dbfcccddcfffffddccfffcccbbcccffbdbccffdd
+        dcfcbbdcffcccfcdcfffffffcbbcccffbdbbcfbd
+        bfcccbbffccccffbdfffffffffbbcccfcdcccccd
+        cfccddcfcccbcffcdbccccccfffbbcccfbdbccfd
+        ccccbdccccbbffffbdccccccccfcbcccfbdcccfb
+        fccbdbfccbbcfccfcdbccccccccfbbccccdbcccc
+        fcccdbcccbbfccccfbdccccccccfcbccccdbcccc
+        cccbdccccbbfcccccfbdcccccccccbcccddbcccc
+        ccccdccccbbccccccfbcbdddddddbddddddbcccc
+        ccccbccccbbcccccccbcbbbbbbbbbbbbbddbcccc
+        ccccbccccbbcccccccdbcccccccffccfcbbbcccc
+        ccccbbcccbbccccccbbcfffffffffcfffcbbcccc
+        ccccbbccccbccccccdbffcccccccccfffcbbcccc
+        cccccbcccfbbccccbbccccccccccbcccccbccccb
+        bcccbbbccccbbccbbcfccccccccbbccccbbccccb
+        bcccfbbcccccbbcbbfccccccccbbcccccbcfcccb
+        bccccbbbcccccbbbccccccccbbbcccccbbbcccbb
+        bbccffbbccccccbbccccccbbbbccfccbbcfcccbb
+        bbcccbcbbccccbbcccbbbbbbcccfccbbbccccbbb
+        bbbccffbbdccbbbfccccccccccfcccbbbfcccbbb
+        bbbccccfcbbbbbcfccccccfcffccbbbcfcccbbbb
+        bbbbccccccbbbbbffffffffccccbbbcbfccbbbbb
+        bbbbbcccfccbbbbccccccccccbbbccffcccbbbbb
+        bbbbbbccccfccbbbdbbbbbddbbbccfccccbbbbbb
+        bbbbbbbccccffcccbbbbbbbcbccfcfccbbbbbbbb
+        bbbbbbbbcccfcfcccccccccccfcfcccbbbbbbbbb
+        bbbbbbbbbbcccfcfcfcfcfcffcccccbbbbbbbbbb
+        bbbbbbbbbbbbcccccfcfcffcccccdbbbbbbbbbbb
+        bbbbbbbbbbbbbbbcccccccccbbbbbbbbbbbbbbbb
+        `, SpriteKind.Application)
+    SystemSettingIcon.setPosition(1000, 722)
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.MenuBar, function (sprite, otherSprite) {
     if (controller.A.isPressed()) {
@@ -5087,8 +5456,21 @@ let M3Hitbox: Sprite = null
 let M2Hitbox: Sprite = null
 let M1Hitbox: Sprite = null
 let AppleLogoDrop: Sprite = null
+let SystemSettingIcon: Sprite = null
+let FinalCutProIcon: Sprite = null
+let GarageBandIcon: Sprite = null
+let BlenderIcon: Sprite = null
+let DiscordIcon: Sprite = null
+let MinecraftIcon: Sprite = null
+let RobloxIcon: Sprite = null
+let NotesIcon: Sprite = null
+let MailIcon: Sprite = null
+let MusicIcon: Sprite = null
+let AppStoreIcon: Sprite = null
+let MessagesIcon: Sprite = null
+let PhotosIcon: Sprite = null
+let SafariIcon: Sprite = null
 let FinderIcon: Sprite = null
-let Apps: Sprite[] = []
 let AppStore: Sprite = null
 let SystemSettings: Sprite = null
 let AboutThisMac: Sprite = null
@@ -5884,51 +6266,23 @@ namespace userconfig {
     export const ARCADE_SCREEN_WIDTH = 1175
     export const ARCADE_SCREEN_HEIGHT = 764
 }
-Mouse.DrawMouse(
-true,
-img`
-    1 . . . . . . . . . 
-    1 1 . . . . . . . . 
-    1 f 1 . . . . . . . 
-    1 f f 1 . . . . . . 
-    1 f f f 1 . . . . . 
-    1 f f f f 1 . . . . 
-    1 f f f f f 1 . . . 
-    1 f f f f f f 1 . . 
-    1 f f f f f f f d . 
-    1 f f f f f f f 1 d 
-    1 f f f f c c c 1 1 
-    1 f f f f f 1 d . . 
-    1 f 1 1 f f d 1 . . 
-    1 1 . . 1 f f b . . 
-    1 . . . 1 f f f d . 
-    . . . . 1 b f f 1 . 
-    . . . . . 1 f 1 1 . 
-    . . . . . . 1 . . . 
-    `,
-1,
-2
-)
-let mySprite = Mouse.mouseSprite()
-mySprite.setBounceOnWall(true)
-mySprite.setKind(SpriteKind.Player)
 AppleLogo = sprites.create(img`
-    f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f 
+    b b b b b b b b b b b b b b b b 
+    b b b b b b b b d 1 b b b b b b 
+    b b b b b b b b 1 1 b b b b b b 
+    b b b b b b b b d b b b b b b b 
+    b b b b 1 1 1 1 1 1 1 1 b b b b 
+    b b b 1 1 1 1 1 1 1 1 1 b b b b 
+    b b b 1 1 1 1 1 1 1 1 b b b b b 
+    b b b 1 1 1 1 1 1 1 1 b b b b b 
+    b b b 1 1 1 1 1 1 1 1 d b b b b 
+    b b b 1 1 1 1 1 1 1 1 1 d b b b 
+    b b b d 1 1 1 1 1 1 1 1 b b b b 
+    b b b b 1 1 1 1 1 1 1 1 b b b b 
+    b b b b b 1 1 d d 1 1 b b b b b 
+    b b b b b b c c c c c b b b b b 
+    b b b b b b b b b b b b b b b b 
+    b b b b b b b b b b b b b b b b 
     `, SpriteKind.MenuBar)
 AppleLogo.setPosition(20, 14)
 AboutThisMac = sprites.create(img`
@@ -7127,6 +7481,35 @@ AppStore = sprites.create(img`
     ccccccccffccccccccccccccccccccccccccfccfccffffccccfccccfcccccccccffccccfccccfcfffffffffffffffffcffffffffffffffffcfffffffffffffffffccfccfcfffcffffccffcffccfccccccccccffccccccccccccccccffccccfffffffccccffffccffcccccccccffcfffccccccfccccccffffffffffffccffccccccccccfcccccccfccccccccccccccccccccccccfcccfccccccccccccccccccccccccccccccccccccccccccccccccfffffcccccccccccccccccccccffcfccfcccfccccffcfcccccccccccccccccccccccfcfffffcccfffccccccccfffffccfcccfcfffffcfcfccccffffffffcfffffcfffffcccfccfcffcfccccfcfcffcffffffccffffffffffccccffcfffffffffcffcffffffffcfffffffffffffcfffcffffffffcfcfcfffffffcfcccccccccccccccfccccccccccccccccccccfcccccccccccccccccccccffcccffcffffcffcccfccccccccccccccccccccccccccccc
     `, SpriteKind.Window)
 sprites.destroyAllSpritesOfKind(SpriteKind.Window)
+AppDock()
+Mouse.DrawMouse(
+true,
+img`
+    1 . . . . . . . . . 
+    1 1 . . . . . . . . 
+    1 f 1 . . . . . . . 
+    1 f f 1 . . . . . . 
+    1 f f f 1 . . . . . 
+    1 f f f f 1 . . . . 
+    1 f f f f f 1 . . . 
+    1 f f f f f f 1 . . 
+    1 f f f f f f f d . 
+    1 f f f f f f f 1 d 
+    1 f f f f c c c 1 1 
+    1 f f f f f 1 d . . 
+    1 f 1 1 f f d 1 . . 
+    1 1 . . 1 f f b . . 
+    1 . . . 1 f f f d . 
+    . . . . 1 b f f 1 . 
+    . . . . . 1 f 1 1 . 
+    . . . . . . 1 . . . 
+    `,
+1,
+2
+)
+let mySprite = Mouse.mouseSprite()
+mySprite.setBounceOnWall(true)
+mySprite.setKind(SpriteKind.Player)
 game.onUpdateInterval(3600000, function () {
 	
 })
